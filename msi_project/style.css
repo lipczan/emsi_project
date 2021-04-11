@@ -1,0 +1,30 @@
+#Lewy {
+    width: 25%;
+    float: left;
+    background-color: rgb(75, 144, 156);
+}
+
+#Prawy {
+    width: 75%;
+    float: right;
+    background-color: aqua;
+}
+
+.abcd {
+    list-style-type: lower-alpha;
+}
+
+.digits {
+    list-style-type: decimal;
+}
+
+#t1 {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

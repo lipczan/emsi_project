@@ -1,0 +1,223 @@
+<!doctype html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie zdalne e-MSI</title>
+    <meta name="author" content="Hubert Lipski">
+
+    <link rel="stylesheet" type="text/css" href="style.css?<?php echo time(); ?>" />
+
+</head>
+
+<body>
+    <div id="Lewy">
+        <ul class="abcd">
+            <li><a href="kontrolki.html">Różne kontrolki HTML</a></li>
+            <li><a href="pracownicy.html">Tabela Pracowników</a></li>
+            <li><a href="faktury.html">Tabela Faktur VAT</a></li>
+            <li><a href="delegacje.php">Tabela Delegacji BD</a></li>
+            <li><a href="kontrahenci.php">Dane Kontrahentów</a></li>
+            <br>
+            <li><a href="index.html">Powrót do strony głównej</a></li>
+        </ul>
+    </div>
+    <div id="Prawy">
+        <table id="t1">
+            <tr>
+                <th>Lp.</th>
+                <th>Opis</th>
+                <th>MPK</th>
+                <th>Kwota Netto</th>
+                <th>Ilość</th>
+                <th>VAT</th>
+                <th>Kwota Brutto</th>
+                <th>Wartość Netto</th>
+                <th>Wartość Brutto</th>
+            </tr>
+            <tr id="tr1">
+                <td>1</td>
+                <td>Opłata ENEA</td>
+                <td id="MPK"></td>
+                <td><input type="text" id="kn" value="300"> zł</td>
+                <td><input type="number" id="ilosc" value="3"></td>
+                <td><input type="number" id="VAT" value="23"> %</td>
+                <td id="thkb"></td>
+                <td id="thwn"></td>
+                <td id="thwb"></td>
+                <td> <button onclick="calculation()">Przelicz</button></td>
+            </tr>
+
+            <tr id="tr2">
+                <td>2</td>
+                <td>Opłata VECTRA</td>
+                <td id="MPK2"></td>
+                <td><input type="text" id="kn2" value="499.9"> zł</td>
+                <td><input type="number" id="ilosc2" value="2"></td>
+                <td><input type="number" id="VAT2" value="8"> %</td>
+                <td id="thkb2"></td>
+                <td id="thwn2"></td>
+                <td id="thwb2"></td>
+                <td> <button onclick="calculation2()">Przelicz</button></td>
+            </tr>
+            <tr id="tr3">
+                <td>3</td>
+                <td>PKO S.A.</td>
+                <td id="MPK3"></td>
+                <td><input type="text" id="kn3" value="1200"> zł</td>
+                <td><input type="number" id="ilosc3" value="1"></td>
+                <td><input type="number" id="VAT3" value="23"> %</td>
+                <td id="thkb3"></td>
+                <td id="thwn3"></td>
+                <td id="thwb3"></td>
+                <td> <button onclick="calculation3()">Przelicz</button></td>
+            </tr>
+            <tr id="tr4">
+                <td>4</td>
+                <td>INEA</td>
+                <td id="MPK4">
+                    </th>
+                    <td><input type="text" id="kn4" value="600"> zł</td>
+                    <td><input type="number" id="ilosc4" value="4"></td>
+                    <td><input type="number" id="VAT4" value="3"> %</td>
+                    <td id="thkb4"></td>
+                    <td id="thwn4"></td>
+                    <td id="thwb4"></td>
+                    <td> <button onclick="calculation4()">Przelicz</button></td>
+            </tr>
+
+            <tr id="tr5">
+                <td>5</td>
+                <td>AquaNET</td>
+                <td id="MPK5"></td>
+                <td><input type="text" id="kn5" value="199.99"> zł</td>
+                <td><input type="number" id="ilosc5" value="6"></td>
+                <td><input type="number" id="VAT5" value="8"> %</td>
+                <td id="thkb5"></td>
+                <td id="thwn5"></td>
+                <td id="thwb5"></td>
+                <td> <button onclick="calculation5()">Przelicz</button></td>
+            </tr>
+        </table>
+
+        <br>
+        <button onclick="check()">Powyżej 1000,00 zł Netto</button>
+
+        <script>
+            var MPK = 333;
+            document.getElementById("MPK").innerHTML = MPK + 20 + ' zł';
+            document.getElementById("MPK2").innerHTML = MPK + 30 + ' zł';
+            document.getElementById("MPK3").innerHTML = MPK + 56 + ' zł';
+            document.getElementById("MPK4").innerHTML = MPK - 50 + ' zł';
+            document.getElementById("MPK5").innerHTML = MPK - 20 + ' zł';
+
+            function calculation() {
+                var kn = document.getElementById("kn").value;
+                var ilosc = document.getElementById("ilosc").value;
+                var VAT = document.getElementById("VAT").value;
+
+                kb = kn * (1 + (VAT / 100));
+                wn = (kn * ilosc);
+                wb = wn * (1 + (VAT / 100));
+
+                document.getElementById("thkb").innerHTML = kb;
+                document.getElementById("thwn").innerHTML = wn;
+                document.getElementById("thwb").innerHTML = wb;
+            }
+
+            function calculation2() {
+                var kn = document.getElementById("kn2").value;
+                var ilosc = document.getElementById("ilosc2").value;
+                var VAT = document.getElementById("VAT2").value;
+
+                kb = kn * (1 + (VAT / 100));
+                wn = (kn * ilosc);
+                wb = wn * (1 + (VAT / 100));
+
+                document.getElementById("thkb2").innerHTML = kb;
+                document.getElementById("thwn2").innerHTML = wn;
+                document.getElementById("thwb2").innerHTML = wb;
+            }
+
+            function calculation3() {
+                var kn = document.getElementById("kn3").value;
+                var ilosc = document.getElementById("ilosc3").value;
+                var VAT = document.getElementById("VAT3").value;
+
+                kb = kn * (1 + (VAT / 100));
+                wn = (kn * ilosc);
+                wb = wn * (1 + (VAT / 100));
+
+                document.getElementById("thkb3").innerHTML = kb;
+                document.getElementById("thwn3").innerHTML = wn;
+                document.getElementById("thwb3").innerHTML = wb;
+            }
+
+            function calculation4() {
+                var kn = document.getElementById("kn4").value;
+                var ilosc = document.getElementById("ilosc4").value;
+                var VAT = document.getElementById("VAT4").value;
+
+                kb = kn * (1 + (VAT / 100));
+                wn = (kn * ilosc);
+                wb = wn * (1 + (VAT / 100));
+
+                document.getElementById("thkb4").innerHTML = kb;
+                document.getElementById("thwn4").innerHTML = wn;
+                document.getElementById("thwb4").innerHTML = wb;
+            }
+
+            function calculation5() {
+                var kn = document.getElementById("kn5").value;
+                var ilosc = document.getElementById("ilosc5").value;
+                var VAT = document.getElementById("VAT5").value;
+
+                kb = kn * (1 + (VAT / 100));
+                wn = (kn * ilosc);
+                wb = wn * (1 + (VAT / 100));
+
+                document.getElementById("thkb5").innerHTML = kb;
+                document.getElementById("thwn5").innerHTML = wn;
+                document.getElementById("thwb5").innerHTML = wb;
+            }
+
+            function check() {
+                var to_check = [
+                    document.getElementById("kn").value,
+                    document.getElementById("kn2").value,
+                    document.getElementById("kn3").value,
+                    document.getElementById("kn4").value,
+                    document.getElementById("kn5").value
+                ]
+
+                if (to_check[0] > 1000)
+                    document.getElementById("tr").style.backgroundColor = "green";
+                else
+                    document.getElementById("tr5").style.backgroundColor = "aqua";
+                if (to_check[1] > 1000)
+                    document.getElementById("tr2").style.backgroundColor = "green";
+                else
+                    document.getElementById("tr5").style.backgroundColor = "aqua";
+                if (to_check[2] > 1000)
+                    document.getElementById("tr3").style.backgroundColor = "green";
+                else
+                    document.getElementById("tr5").style.backgroundColor = "aqua";
+                if (to_check[3] > 1000)
+                    document.getElementById("tr4").style.backgroundColor = "green";
+                else
+                    document.getElementById("tr5").style.backgroundColor = "aqua";
+                if (to_check[4] > 1000)
+                    document.getElementById("tr5").style.backgroundColor = "green";
+                else
+                    document.getElementById("tr5").style.backgroundColor = "aqua";
+
+
+            }
+        </script>
+
+    </div>
+
+</body>
+
+</html>

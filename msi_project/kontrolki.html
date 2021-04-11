@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie zdalne e-MSI</title>
+    <meta name="author" content="Hubert Lipski">
+
+    <link rel="stylesheet" type="text/css" href="style.css?<?php echo time(); ?>" />
+
+
+</head>
+
+<body>
+    <div id="Lewy">
+        <ul class="abcd">
+            <li><a href="kontrolki.html">Różne kontrolki HTML</a></li>
+            <li><a href="pracownicy.html">Tabela Pracowników</a></li>
+            <li><a href="faktury.html">Tabela Faktur VAT</a></li>
+            <li><a href="delegacje.php">Tabela Delegacji BD</a></li>
+            <li><a href="kontrahenci.php">Dane Kontrahentów</a></li>
+            <br>
+            <li><a href="index.html">Powrót do strony głównej</a></li>
+
+        </ul>
+    </div>
+    <div id="Prawy">
+        <p>
+            <ul class="digits">
+                <li>
+                    NIP<input type="text" name="NIP">
+                </li>
+                <li>
+                    REGON<input type="number" name="REGON">
+                </li>
+                <li>
+                    NAZWA<input type="text" name="NAZWA">
+                </li>
+                <li>
+                    DATA POWSTANIA<input type="date" name="DATA">
+                </li>
+                <li>
+                    ULICA<input type="text" name="ULICA">
+                </li>
+                <li>
+                    NUMER DOMU<input type="text" name="NRD">
+                </li>
+                <li>
+                    NUMER MIESZKANIA<input type="text" name="NRM">
+                </li>
+                <li>
+                    UWAGI<input type="text" name="UWAGI">
+                </li>
+            </ul>
+        </p>
+
+        KOLORY
+        <select>
+            <option style="color:green">zielony</option>
+            <option style="color:rgb(32, 120, 179)">niebieski</option>
+            <option style="color:grey">szary</option>
+            <option style="color:rgb(12, 192, 168)">turkusowy</option>
+            <option style="color:blue">granatowy</option>
+            <option style="color:red">czerwony</option>
+            <option style="color:black">biały</option>
+
+        </select> VAT
+        <Select>
+            <option>ZW</option>
+            <option>NP</option>
+            <option>0%</option>
+            <option>3%</option>
+            <option>8%</option>
+            <option>23%</option>
+        </Select>
+        <br>
+        <ul class="digits">
+            <li>Element</li>
+            <li>Element</li>
+            <li>Element</li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
